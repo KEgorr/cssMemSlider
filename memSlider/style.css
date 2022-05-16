@@ -14,6 +14,11 @@
     margin: 10rem auto;
  }
  
+ #slider {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
  
  #slider input[type=radio] {
     display: none;
@@ -52,31 +57,41 @@
  }
  
  p {
-    margin-top: 0.5rem;
-    text-align: center;
+    margin-top: 1rem;
+    text-align: start;
     font-family: monospace;
     font-size: 1.1rem;
  }
  
- .text-content {
-     overflow: hidden;
- }
+.text {
+    width: 50%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.text .inner {
+    width: 400%;
+}
+
+.text-content {
+    width: 100%;
+}
  
- #slide1:checked ~ #slides .inner {
+ #slide1:checked ~ #slides .inner, #slide1:checked ~ .text .inner {
     margin-left: 0;
  }
- #slide2:checked ~ #slides .inner {
+ #slide2:checked ~ #slides .inner, #slide2:checked ~ .text .inner {
     margin-left: -100%;
  }
- #slide3:checked ~ #slides .inner {
+ #slide3:checked ~ #slides .inner, #slide3:checked ~ .text .inner {
     margin-left: -200%;
  }
- #slide4:checked ~ #slides .inner {
+ #slide4:checked ~ #slides .inner, #slide4:checked ~ .text .inner {
     margin-left: -300%;
  }
  
  #bullets {
-    margin: 1rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     column-gap: 1rem;
@@ -96,21 +111,31 @@
  #slide4:checked ~ #bullets label:nth-child(4) span {
     background: #444;
  }
- @media screen and (max-width: 768px) {
+ @media screen and (max-width: 900px) {
     .wrapper {
        width: 80vw;
-       margin: 1rem auto;
+       margin: 10rem auto;
+    }
+
+    .text {
+        width: 100%;
+        order: 1;
     }
  
     img {
         width: 80vw;
         height: 15.625rem;
     }
+
+    #slider {
+        justify-content: center;
+    }
     
     span {
         width: 0.8rem;
         height: 0.8rem;
     }
+
     label {
         width: 1.5rem;
         height: 1.5rem; 
