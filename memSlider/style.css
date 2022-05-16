@@ -103,8 +103,23 @@
     border-radius:100%;
     background: #ccc;
     text-align: center;
-    
  }
+
+ label:hover span {
+    background: rgb(160, 160, 160);
+ }
+
+ label:active span {
+     background: rgb(0, 0, 0);
+ }
+
+ #slide1:checked ~ #bullets label:nth-child(1):hover span,
+ #slide2:checked ~ #bullets label:nth-child(2):hover span,
+ #slide3:checked ~ #bullets label:nth-child(3):hover span,
+ #slide4:checked ~ #bullets label:nth-child(4):hover span {
+    background: rgb(19, 19, 19);
+ }
+
  #slide1:checked ~ #bullets label:nth-child(1) span,
  #slide2:checked ~ #bullets label:nth-child(2) span,
  #slide3:checked ~ #bullets label:nth-child(3) span,
